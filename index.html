@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS Styling Project</title>
+  <!-- Linking the external stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Unstyled part of the page -->
+  <h1>No Styling</h1>
+  <p>This is the part of the page without any CSS applied. Kind of boring.</p>
+  <img src="images/boringsign.webp" alt="Unstyled image" width="200" />
+
+  <hr />
+
+  <!-- Styled section starts -->
+  <div id="styled-section">
+
+    <!-- Re-styled version of the header -->
+    <h1 class="fancy-heading">Styled with CSS</h1>
+
+    <!-- Paragraph for the applied css -->
+    <p class="fancy-text">
+      This section had CSS applied, hope you can tell the difference.
+    </p>
+
+    <!-- Subheading for images -->
+    <h2 class="fancy-heading" style="margin-top: 30px;">
+      The last three movies I watched in theaters
+    </h2>
+
+    <!-- Using Flexbox to line up the three images side-by-side -->
+    <div class="image-row">
+      <img src="images/supermanposter.webp" alt="Superman poster" class="fancy-image" />
+      <img src="images/f1poster.jpg" alt="F1 movie poster" class="fancy-image" />
+      <img src="images/missionimpossibleposter.jpg" alt="Mission Impossible poster" class="fancy-image" />
+    </div>
+  </div>
+
+  <!-- Hidden image that shows up only after user scrolls to the bottom -->
+  <img src="images/bouncingimage.jpg" alt="Fun bouncing image" class="bouncing-image" />
+
+  <!-- javascript, scroll detection, adds a class to body when you're at the bottom of the page -->
+  <script>
+    function checkScroll() {
+      const atBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2;
+      // Add or remove a class from the <body> depending on scroll position
+      document.body.classList.toggle('scrolled-to-bottom', atBottom);
+    }
+
+    // Run the scroll check on scroll and when the page loads
+    window.addEventListener('scroll', checkScroll);
+    window.addEventListener('load', checkScroll);
+  </script>
+
+</body>
+</html>
